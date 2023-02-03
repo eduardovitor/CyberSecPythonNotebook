@@ -21,6 +21,7 @@ def main():
         porta = input("Digite a porta: ")
         sock.settimeout(30)
         sock.connect((host,int(porta)))
+        sock.shutdown(2)
 
     except socket.error as e:
         print("A conexão foi mal-sucedida no host: {}, porta: {}".format(host,porta))
