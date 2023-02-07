@@ -7,7 +7,8 @@ def coletar_palavras(url):
     lista_palavras = []
     cod_fonte = requests.get(url).content
     soup = BeautifulSoup(cod_fonte,"html.parser")
-    for texto in soup.findAll("div",{"class": "entry-content"}):
+    for texto in soup.findAll("div",{"class": "ContainerStyles__StyledContainer-sc-1vejnbq-0 kEXOVA"}):
+        print(texto)
         conteudo = texto.text
         palavras = conteudo.lower().split()
         for palavra in palavras:
@@ -37,7 +38,7 @@ def retornaDictPalavras(lista_palavras):
     palavras_comuns = contador.most_common(10)
     print(palavras_comuns)
 
-url="https://www.geeksforgeeks.org/python-programming-language/"
+url="https://www.digitalocean.com/community/tutorials/python-tutorial"
 
 lista_palavras = coletar_palavras(url)
 lista_limpa = limpar_palavras(lista_palavras)
