@@ -4,7 +4,7 @@ sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 
 host = "localhost"
 porta_servidor = 5432
-msg = "\nOlá cliente, tudo certo por aqui parceiro"
+msg = "\nServidor: Olá cliente, tudo certo por aqui parceiro"
 
 sock.bind((host,porta_servidor)) 
 # O bind faz com que o host funcione como um servidor que recebe mensagens na porta escolhida
